@@ -78,14 +78,14 @@
 /* Define to 1 if you have the `gnurx' library (-lgnurx). */
 /* #undef HAVE_LIBGNURX */
 
+/* Define to 1 if you have the `seccomp' library (-lseccomp). */
+/* #undef HAVE_LIBSECCOMP */
+
 /* Define to 1 if you have the `z' library (-lz). */
 #define HAVE_LIBZ 1
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
-
-/* Define to 1 if you have the <locale.h> header file. */
-#define HAVE_LOCALE_H 1
 
 /* Define to 1 if you have the `localtime_r' function. */
 #define HAVE_LOCALTIME_R 1
@@ -95,6 +95,9 @@
 
 /* Define to 1 if <wchar.h> declares mbstate_t. */
 #define HAVE_MBSTATE_T 1
+
+/* Define to 1 if you have the `memmem' function. */
+#define HAVE_MEMMEM 1
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
@@ -116,9 +119,6 @@
 
 /* Define to 1 if you have the `setlocale' function. */
 #define HAVE_SETLOCALE 1
-
-/* Define to 1 if you have the <signal.h> header file. */
-#define HAVE_SIGNAL_H 1
 
 /* Have sig_t type */
 #define HAVE_SIG_T 1
@@ -275,7 +275,7 @@
 #define PACKAGE_NAME "file"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "file 5.31"
+#define PACKAGE_STRING "file 5.37"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "file"
@@ -284,7 +284,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "5.31"
+#define PACKAGE_VERSION "5.37"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -315,7 +315,7 @@
 
 
 /* Version number of package */
-#define VERSION "5.31"
+#define VERSION "5.37"
 
 /* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
    significant byte first (like Motorola and SPARC, unlike Intel). */
