@@ -41,9 +41,9 @@ env -i \
 	TOOLCHAINS="${TOOLCHAINS}" \
 	xcrun -sdk "${SDKROOT}" xcodebuild install \
 		-target file \
-		-sdk "macosx" \
+		-sdk "macosx.internal" \
 		SRCROOT="${SRCROOT}" \
-		OBJROOT="${OBJROOT}" \
+		OBJROOT="${OBJROOT}/build_magichost" \
 		SYMROOT="${MAGICHOST_SYMROOT}" \
 		DSTROOT="${MAGICHOST_DSTROOT}" \
 		ARCHS='$(NATIVE_ARCH_ACTUAL)' \
