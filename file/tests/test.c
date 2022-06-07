@@ -56,12 +56,15 @@ slurp(FILE *fp, size_t *final_len)
 	for (c = getc(fp); c != EOF; c = getc(fp)) {
 		if (s == l + len) {
 			l = xrealloc(l, len * 2);
+			s = l + len;
 			len *= 2;
 		}
 		*s++ = c;
 	}
-	if (s == l + len)
+	if (s == l + len) {
 		l = (char *)xrealloc(l, len + 1);
+		s = l + len;
+	}
 	*s++ = '\0';
 
 	*final_len = s - l;
@@ -75,8 +78,8 @@ main(int argc, char **argv)
 	struct magic_set *ms;
 	const char *result;
 	size_t result_len, desired_len;
-	char *desired;
-	int i, e = EXIT_FAILURE;
+	char *desired = NULL;
+	int e = EXIT_FAILURE;
 	FILE *fp;
 
 
@@ -131,6 +134,7 @@ main(int argc, char **argv)
 	}
 	e = 0;
 bad:
+	free(desired);
 	magic_close(ms);
 	return e;
 }
